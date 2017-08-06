@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.lenovo.materialdesign.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appBar">
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:background="?attr/colorPrimary"
+            android:id="@+id/tooBar"
+            android:layout_alignParentTop="true"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            android:layout_height="?attr/actionBarSize">
+            <!--for setting height equals to that of action bar ,
+            attr=attribute-->
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+    <!-- for including layout via layout name-->
+    <include layout="@layout/content_main"
+        android:id="@+id/content">
+        <!-- for including layout via layout name-->
+    </include>
+<android.support.design.widget.FloatingActionButton
+    android:layout_width="64dp"
+    android:layout_height="64dp"
+    android:id="@+id/fab"
+    android:src="@mipmap/ic_launcher"
+    app:layout_anchor="@id/content"
+
+    app:layout_anchorGravity="bottom|right"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    android:layout_marginBottom="16dp"
+    android:layout_marginRight="16dp"
+    />
+    <!--layout_anchor =for anchor layout button on content
+   layout_anchorGravity =place on view where it is to be anchored bottom and right-->
+
+</android.support.design.widget.CoordinatorLayout>

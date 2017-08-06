@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.lenovo.materialdesign.BasicActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <!-- for making bigbar collapse on scrolling to convert into small appbar-->
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentScrim="@color/colorAccent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <!-- contentScrim="?attr/colorPrimary" so that color primary starting set colorprimary when collapsable toolbar starts collapsing finally colorprimary will be set completely-->
+            <!--layout_scrollFlags="scroll" means scroll bar scrollable ,"enterAlways" =bar comes just we stared maving up otherwise it will come at the end of scrolling upward
+            "exitUntilCollapsed" =to allow scrolling until it collapsed -->
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:id="@+id/image_view"
+                android:src="@mipmap/ic_launcher_round"
+                app:layout_collapseMode="parallax"/>
+
+            <!--layout_collapseMode="parallax" so that image will scroll inwards  -->
+
+            <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+                app:layout_collapseMode="pin"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            <!-- layout_collapseMode="pin" so that collapseable toolbar collapse and finally actual Toolbar pin to the screen -->
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_basic" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+</android.support.design.widget.CoordinatorLayout>

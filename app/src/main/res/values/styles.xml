@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Light here is background color which is white in color,
+       DarkActionBar means actionBar is of dark color -->
+
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- we are making our own theme for activity-->
+    <style name="AppTheme.NoActionBar"><!-- Apptheme. means our theme extending Apptheme same as class inheritance-->
+        <item name="windowActionBar">false</item><!-- this removes action bar -->
+        <item name="windowNoTitle">true</item>
+        <!-- we cannot remove action bar without enabling windowNoTitle true ,
+         as otherwise compiler want to set title in action bar we donot have action bar-->
+        <!-- we cannot status bar from application as it is above application level -->
+
+    </style>
+    <!-- we are making our own custom theme for setting it on every textView of our activity so that we only have to make changes at one place-->
+
+    <style name="CustomTextViewTheme" parent="TextAppearance.AppCompat.Widget.TextView.SpinnerItem">
+        <item name="android:textSize">10dp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <!-- theme of toolbar -->
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>
